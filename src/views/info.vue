@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="16">
         <div class="grid-content">
-          <h3>注:所有信息都是基于教务系统获取,并且所有操作都是直接调用教务系统接口</h3>
+          <h3>注:绝不收集用户任何隐私信息</h3>
           <el-descriptions title="用户信息" :column="windowWidth<850?1:3">
             <el-descriptions-item label="姓名"><el-tag type="info" size="small">{{infoForm.name}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="学号"><el-tag type="info" size="small">{{infoForm.id}}</el-tag></el-descriptions-item>
@@ -54,12 +54,10 @@
 <!--              </el-form-item>-->
             </el-form>
             <div slot="footer" class="dialog-footer">
-              <el-button @click="dialogFormVisible = false">取 消</el-button>
+              <el-button @click="dialogTableVisible = false">取 消</el-button>
               <el-button type="primary" @click="openConfirm('infoForm');">确 定</el-button>
             </div>
           </el-dialog>
-
-
         </div>
       </el-col>
       <el-col :span="4">

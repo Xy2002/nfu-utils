@@ -105,11 +105,11 @@ export default {
     }
     this.initLoginState();
     this.$notify({
-      title: 'Version 0.3.1',
-      message: '当前版本号为0.3.1。完善学分管理功能，挂科学科不再计入已修学分内。下个版本将会进一步完善学分管理功能。因涉及隐私问题，取消了同班同学显示学号的功能，改为显示姓名班级。另，因本服务器被教务限制访问，速度可能会有所下降，如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
+      title: 'Version 0.4.0',
+      message: '当前版本号为0.4.0。成绩管理功能添加查看本课排名功能以及本专业排名功能，所有表格都可以左右滑动查看，课程表的课程方块可以点击查看详细信息。如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
       type: 'info',
       position: 'bottom-right',
-      duration: 8000
+      duration: 15000
     });
     //在页面刷新时将vuex里的信息保存到sessionStorage里
     // window.addEventListener("beforeunload",()=>{

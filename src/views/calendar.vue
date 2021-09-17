@@ -2,7 +2,7 @@
   <div>
 
     <el-dialog center title="详细信息" :visible.sync="dialogTableVisible"  :width="windowWidth>850?'50%':'80%'" >
-      <el-descriptions border size="mini" column="1">
+      <el-descriptions border size="mini" :column="parseInt('1')">
         <el-descriptions-item label="课程名称">{{courseName}}</el-descriptions-item>
         <el-descriptions-item label="任课老师">{{courseTeacher}}</el-descriptions-item>
         <el-descriptions-item label="上课地点">{{description}}</el-descriptions-item>
