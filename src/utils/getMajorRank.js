@@ -7,7 +7,7 @@ var data = qs.stringify({
 });
 var config = {
     method: 'post',
-    url: 'https://www.naiquoy.com/apis/sesa/getMajorRank',
+    url: 'https://tool.naiquoy.com/apis/sesa/getMajorRank',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
     },

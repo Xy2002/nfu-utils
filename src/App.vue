@@ -105,8 +105,8 @@ export default {
     }
     this.initLoginState();
     this.$notify({
-      title: 'Version 0.4.0',
-      message: '当前版本号为0.4.0。成绩管理功能添加查看本课排名功能以及本专业排名功能，所有表格都可以左右滑动查看，课程表的课程方块可以点击查看详细信息。如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
+      title: 'Version 0.4.1',
+      message: '当前版本号为0.4.1。更新电费信息，成绩管理功能添加查看本课排名功能以及本专业排名功能，所有表格都可以左右滑动查看，课程表的课程方块可以点击查看详细信息。如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
       type: 'info',
       position: 'bottom-right',
       duration: 15000

@@ -3,7 +3,7 @@ const request = require("request");
 async function getMajorRank(id,name,num){
     let options = {
         'method': 'POST',
-        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getMajorRank' : 'https://www.naiquoy.com/apis/sesa/getMajorRank',
+        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getMajorRank' : 'https://tool.naiquoy.com/apis/sesa/getMajorRank',
         'headers': {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -30,7 +30,7 @@ async function getMajorRank(id,name,num){
 async function getMajorCount(id,name,num){
     let options = {
         'method': 'POST',
-        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getMajorCount' : 'https://www.naiquoy.com/apis/sesa/getMajorCount',
+        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getMajorCount' : 'https://tool.naiquoy.com/apis/sesa/getMajorCount',
         'headers': {
             'Content-Type': 'application/x-www-form-urlencoded'
         },

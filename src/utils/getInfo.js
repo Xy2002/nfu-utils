@@ -148,7 +148,7 @@ async function getInfo(jwloginToken) {
 async function getClassmateList(code,id,name,num){
     let options = {
         'method': 'POST',
-        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getClassmateList' : 'https://www.naiquoy.com/apis/sesa/getClassmateList',
+        'url':  process.env.NODE_ENV === 'development' ? 'http://47.103.153.181:20000/apis/sesa/getClassmateList' : 'https://tool.naiquoy.com/apis/sesa/getClassmateList',
         'headers': {
             'Content-Type': 'application/x-www-form-urlencoded'
         },

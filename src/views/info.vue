@@ -12,11 +12,14 @@
             <el-descriptions-item label="学号"><el-tag type="info" size="small">{{infoForm.id}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="院系"><el-tag size="small">{{infoForm.faculty}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="专业"><el-tag size="small">{{infoForm.major}}</el-tag></el-descriptions-item>
+            <el-descriptions-item label="所在楼栋"><el-tag size="small">{{infoForm.architectures}}</el-tag></el-descriptions-item>
+            <el-descriptions-item label="所在房间"><el-tag size="small">{{infoForm.room}}</el-tag></el-descriptions-item>
+            <el-descriptions-item label="宿舍电费"><el-tag size="small">{{infoForm.electricity}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="手机"><el-tag type="success" size="small">{{infoForm.phone?infoForm.phone:"暂未填写"}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="邮箱"><el-tag type="success" size="small">{{infoForm.email?infoForm.email:"暂未填写"}}</el-tag></el-descriptions-item>
             <el-descriptions-item label="修改"><el-link icon="el-icon-edit" type="primary" @click="link">点击这里</el-link></el-descriptions-item>
           </el-descriptions>
-          <el-dialog title="收货地址" :visible.sync="dialogTableVisible" :width="windowWidth>850?'50%':'80%'">
+          <el-dialog title="修改信息" :visible.sync="dialogTableVisible" :width="windowWidth>850?'50%':'80%'">
             <el-form :model="infoForm" status-icon :rules="rules" ref="infoForm" label-width="auto"
                      class="demo-ruleForm" >
               <el-form-item prop="name">
@@ -68,8 +71,9 @@
 </template>
 
 <script>
-import {getInfo, checkLoginStatus} from '../utils/getInfo'
+import {getInfo, checkLoginStatus} from '@/utils/getInfo'
 import updateContact from '../utils/updateContact'
+import getElectricity from '@/utils/getElectricity'
 
 export default {
   name: "info",
@@ -102,6 +106,9 @@ export default {
         major: "",
         phone: "",
         email: "",
+        architectures:"",
+        room:"",
+        electricity:""
       },
       rules: {
         phone: [{validator: validatorPhone, trigger: 'blur'}],
@@ -136,7 +143,20 @@ export default {
       }
       console.log("loginStatus",loginStatus)
       if (loginStatus === true) {
-        this.infoForm = await getInfo(jwloginToken)
+        let infoData = await getInfo(jwloginToken)
+        this.infoForm.name=infoData.name
+        this.infoForm.email=infoData.email
+        this.infoForm.phone=infoData.phone
+        this.infoForm.faculty=infoData.faculty
+        this.infoForm.major=infoData.major
+        this.infoForm.id=infoData.id
+        let id = this.$store.getters.getId
+        let name = this.$store.getters.getName
+        let num = this.$store.getters.getAccount
+        let electricityInfo = await getElectricity(id,name,num)
+        this.infoForm.architectures = electricityInfo.architectures
+        this.infoForm.electricity = electricityInfo.electricity
+        this.infoForm.room = electricityInfo.room
       } else {
         this.$notify.error({
           title: 'Error',
