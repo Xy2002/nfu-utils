@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <el-dialog center title="详细信息" :visible.sync="dialogTableVisible"  :width="windowWidth>850?'50%':'80%'" >
+    <el-dialog center title="详细信息" :visible.sync="dialogTableVisible"  :width="windowWidth>850?'50%':'80%'" :height="windowWidth>850?'50%':'80%'">
       <el-descriptions border size="mini" :column="parseInt('1')">
         <el-descriptions-item label="课程名称">{{courseName}}</el-descriptions-item>
         <el-descriptions-item label="任课老师">{{courseTeacher}}</el-descriptions-item>
@@ -11,7 +11,7 @@
         <el-descriptions-item label="课程性质">{{courseNature}}</el-descriptions-item>
       </el-descriptions>
 
-      <el-table :data="gridData" stripe size="mini" max-height="250">
+      <el-table :data="gridData" stripe size="mini" :max-height="windowWidth>850?'350':'250'">
         <el-table-column property="xsxm" label="姓名"></el-table-column>
         <el-table-column property="bJMC" label="班级名称"></el-table-column>
       </el-table>

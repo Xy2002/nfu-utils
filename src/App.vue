@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <div>
+      <el-alert
+          title="本项目即将重构,希望有会设计的同学能帮助我们设计UI，有意者请向邮箱Marsh@88.com发送邮件，谢谢！"
+          type="success"
+      >
+      </el-alert>
       <el-menu
           :default-active="$route.path"
           class="el-menu-demo"
@@ -17,6 +22,7 @@
         <el-menu-item route="./sponsor" index="/sponsor">赞助作者</el-menu-item>
         <el-menu-item v-show="isLogin" @click="clearCookie">退出登录</el-menu-item>
       </el-menu>
+
       <router-view></router-view>
     </div>
   </div>
@@ -105,8 +111,8 @@ export default {
     }
     this.initLoginState();
     this.$notify({
-      title: 'Version 0.4.1',
-      message: '当前版本号为0.4.1。更新电费信息，成绩管理功能添加查看本课排名功能以及本专业排名功能，所有表格都可以左右滑动查看，课程表的课程方块可以点击查看详细信息。如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
+      title: 'Version 0.4.11',
+      message: '当前版本号为0.4.11。成绩管理功能添加查看本课排名功能以及本专业排名功能，所有表格都可以左右滑动查看，课程表的课程方块可以点击查看详细信息。如有需求定制或对本工具有合理建议,可以向邮箱Marsh@88.com发送email',
       type: 'info',
       position: 'bottom-right',
       duration: 15000
