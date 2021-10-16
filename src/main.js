@@ -5,6 +5,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import FullCalendar from 'vue-fullcalendar'
+import VueI18n from 'vue-i18n'
+import i18n from './i18n'
+Vue.use(VueI18n)
 Vue.use(FullCalendar)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -19,6 +22,7 @@ window._hmt = _hmt; // 修改为window 全局变量
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
 

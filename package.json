@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/undefined/**/*.json\""
   },
   "dependencies": {
     "@fullcalendar/timegrid": "^5.9.0",
@@ -23,6 +24,7 @@
     "tippy.js": "^6.3.1",
     "vue": "^2.6.11",
     "vue-fullcalendar": "^1.0.9",
+    "vue-i18n": "^8.26.5",
     "vue-router": "^3.2.0",
     "vue-tippy": "^4.10.2",
     "vuex": "^3.4.0",
